@@ -14,52 +14,56 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var arr = [];
 var Vehicles = /** @class */ (function () {
-    function Vehicles(b, c, d, e, f, g) {
+    function Vehicles(a, b, c, d, e, f, g, img) {
+        this.name = '';
         this.price = '';
         this.kilometers = '';
         this.production = '';
         this.seats = '';
         this.fuel = '';
         this.vehicle = '';
+        this.img = '';
+        this.name = a;
         this.price = b;
         this.kilometers = c;
         this.production = d;
         this.seats = e;
         this.fuel = f;
         this.vehicle = g;
+        this.img = img;
         arr.push(this);
     }
     Vehicles.prototype.attributes = function () {
-        return " " + this.vehicle + " " + this.price + "  " + this.kilometers + " \n       " + this.production + " " + this.seats + " " + this.fuel;
+        return " " + this.vehicle + " " + this.price + "  " + this.kilometers + " \n       " + this.production + " " + this.seats + " " + this.fuel + " " + this.img;
     };
     return Vehicles;
 }());
 var motorbike = /** @class */ (function (_super) {
     __extends(motorbike, _super);
-    function motorbike(b, c, d, e, f, g, h) {
-        var _this = _super.call(this, b, c, d, e, f, g) || this;
+    function motorbike(a, b, c, d, e, f, g, h, img) {
+        var _this = _super.call(this, a, b, c, d, e, f, g, img) || this;
         _this.extraprice = h;
         return _this;
     }
     motorbike.prototype.attributes = function () {
-        return " <img class=\"card-img-top\" src=\"./img/african.twin.jpg\" alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">" + this.vehicle + "</h5>\n      <p class=\"card-text\"> " + this.price + "  " + this.kilometers + " \n      " + this.production + " " + this.seats + " " + this.fuel + "</p>\n      <a href=\"#\" class=\"btn btn-primary\">Calculate</a>\n    </div> <br>\n     ";
+        return " <img class=\"card-img-top\" src=\"" + this.img + "\" alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">" + this.vehicle + " " + this.name + "</h5>\n      <p class=\"card-text\"> " + this.price + "  " + this.kilometers + " \n      " + this.production + " " + this.seats + " " + this.fuel + "</p>\n      <a href=\"#\" class=\"btn btn-primary\">Calculate</a>\n    </div> <br>\n     ";
     };
     return motorbike;
 }(Vehicles));
 var car = /** @class */ (function (_super) {
     __extends(car, _super);
-    function car(b, c, d, e, f, g, h) {
-        var _this = _super.call(this, b, c, d, e, f, g) || this;
+    function car(a, b, c, d, e, f, g, img, h) {
+        var _this = _super.call(this, a, b, c, d, e, f, g, img) || this;
         _this.color = h;
         return _this;
     }
     car.prototype.attributes = function () {
-        return "  <img class=\"card-img-top\" src=\"\" alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">" + this.vehicle + "</h5>\n      <p class=\"card-text\"> " + this.price + "  " + this.kilometers + " \n      " + this.production + " " + this.seats + " " + this.fuel + " " + this.color + "</p>\n      <a href=\"#\" class=\"btn btn-primary\">Calculate</a>\n    </div>\n    ";
+        return "  <img class=\"card-img-top\" src=\"" + this.img + "\" alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">" + this.vehicle + " " + this.name + "</h5>\n      <p class=\"card-text\"> " + this.price + "  " + this.kilometers + " \n      " + this.production + " " + this.seats + " " + this.fuel + " " + this.color + "</p>\n      <a href=\"#\" class=\"btn btn-primary\">Calculate</a>\n    </div>\n    ";
     };
     return car;
 }(Vehicles));
-var display1 = new motorbike('10', '100', '99', '2', 'petrol', 'motorbike', '2000');
-var display2 = new car('10', '100', '99', '2', 'benzin', 'car', 'blue');
+var display1 = new motorbike('African Twin', '14200$', '100km', '2020', '2', 'petrol', 'motorbike', '2000', 'img/african-twin.jpg');
+var display2 = new car('Tesla Cybertruck', '40000$', '50km', '2025', '5', 'electrical', 'car', 'img/cyber-truck.jpg', 'silver');
 for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
     var i = arr_1[_i];
     document.getElementById('result').innerHTML += i.attributes() + " <br>";
