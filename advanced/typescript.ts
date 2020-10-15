@@ -59,7 +59,7 @@ class Motorbike extends Vehicles {
         <h5 class="card-title"><span class=" text-danger">${this.vehicle}:</span> ${this.name}</h5>
         <p class="card-text"> Base price: ${this.initialPrice} <br> Millage: ${this.kilometers} <hr>
             Production year: ${this.production} <br> Number of seats: ${this.seats} <br> Fuel type: ${this.fuel}</p>
-        <a  class="btn btn-primary pricebutton">Calculate</a><p class="lastPrice"> <br> <br></p>
+        <a  class="btn btn-dark pricebutton text-white">Calculate</a><p class="lastPrice"> <br> <br></p>
       </div> <br>
     </div>
      `;
@@ -89,7 +89,7 @@ class Car extends Vehicles {
         <h5 class="card-title"><span class=" text-success">${this.vehicle}:</span> ${this.name}</h5>
         <p class="card-text"> Base price: ${this.initialPrice} <br> Millage: ${this.kilometers} <hr>
             Production year: ${this.production} <br> Number of seats: ${this.seats} <br> Fuel type: ${this.fuel}</p>
-        <a  class="btn btn-primary pricebutton">Calculate</a> <p class="lastPrice"> <br> <br> </p>
+        <a  class="btn btn-dark pricebutton text-white">Calculate</a> <p class="lastPrice"> <br> <br> </p>
       </div>
     </div>
     `;

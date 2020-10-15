@@ -59,7 +59,7 @@ var Motorbike = /** @class */ (function (_super) {
         return _this;
     }
     Motorbike.prototype.attributes = function () {
-        return " \n    <div class=\"card m-1  col-lg-5\">\n      <img class=\"card-img-top mt-1\" src=\"" + this.img + "\" alt=\"Card image cap\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\"><span class=\" text-danger\">" + this.vehicle + ":</span> " + this.name + "</h5>\n        <p class=\"card-text\"> Base price: " + this.initialPrice + " <br> Millage: " + this.kilometers + " <hr>\n            Production year: " + this.production + " <br> Number of seats: " + this.seats + " <br> Fuel type: " + this.fuel + "</p>\n        <a  class=\"btn btn-primary pricebutton\">Calculate</a><p class=\"lastPrice\"> <br> <br></p>\n      </div> <br>\n    </div>\n     ";
+        return " \n    <div class=\"card m-1  col-lg-5\">\n      <img class=\"card-img-top mt-1\" src=\"" + this.img + "\" alt=\"Card image cap\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\"><span class=\" text-danger\">" + this.vehicle + ":</span> " + this.name + "</h5>\n        <p class=\"card-text\"> Base price: " + this.initialPrice + " <br> Millage: " + this.kilometers + " <hr>\n            Production year: " + this.production + " <br> Number of seats: " + this.seats + " <br> Fuel type: " + this.fuel + "</p>\n        <a  class=\"btn btn-dark pricebutton text-white\">Calculate</a><p class=\"lastPrice\"> <br> <br></p>\n      </div> <br>\n    </div>\n     ";
     };
     Motorbike.prototype.priceCalculation = function () {
         if (this.vehicle == 'car') {
@@ -81,7 +81,7 @@ var Car = /** @class */ (function (_super) {
         return _this;
     }
     Car.prototype.attributes = function () {
-        return "  \n    <div class=\"card m-1 col-lg-5\">\n      <img class=\"card-img-top mt-1\" src=\"" + this.img + "\" alt=\"Card image cap\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\"><span class=\" text-success\">" + this.vehicle + ":</span> " + this.name + "</h5>\n        <p class=\"card-text\"> Base price: " + this.initialPrice + " <br> Millage: " + this.kilometers + " <hr>\n            Production year: " + this.production + " <br> Number of seats: " + this.seats + " <br> Fuel type: " + this.fuel + "</p>\n        <a  class=\"btn btn-primary pricebutton\">Calculate</a> <p class=\"lastPrice\"> <br> <br> </p>\n      </div>\n    </div>\n    ";
+        return "  \n    <div class=\"card m-1 col-lg-5\">\n      <img class=\"card-img-top mt-1\" src=\"" + this.img + "\" alt=\"Card image cap\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\"><span class=\" text-success\">" + this.vehicle + ":</span> " + this.name + "</h5>\n        <p class=\"card-text\"> Base price: " + this.initialPrice + " <br> Millage: " + this.kilometers + " <hr>\n            Production year: " + this.production + " <br> Number of seats: " + this.seats + " <br> Fuel type: " + this.fuel + "</p>\n        <a  class=\"btn btn-dark pricebutton text-white\">Calculate</a> <p class=\"lastPrice\"> <br> <br> </p>\n      </div>\n    </div>\n    ";
     };
     return Car;
 }(Vehicles));
