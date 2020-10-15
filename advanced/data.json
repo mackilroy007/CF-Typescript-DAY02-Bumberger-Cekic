@@ -1,9 +1,0 @@
-var data = `[{
-  "vehicle": "F200",
-  "kilometers": 200,
-  "seats": 5,
-  "fuel": "diesel",
-  "productionYear": 1999,
-  "price": 15000
-
-}]`
