@@ -38,17 +38,17 @@ var Vehicles = /** @class */ (function () {
     };
     return Vehicles;
 }());
-var motorbike = /** @class */ (function (_super) {
-    __extends(motorbike, _super);
-    function motorbike(a, b, c, d, e, f, g, h, img) {
+var Motorbike = /** @class */ (function (_super) {
+    __extends(Motorbike, _super);
+    function Motorbike(a, b, c, d, e, f, g, h, img) {
         var _this = _super.call(this, a, b, c, d, e, f, g, img) || this;
         _this.extraprice = h;
         return _this;
     }
-    motorbike.prototype.attributes = function () {
-        return " <img class=\"card-img-top\" src=\"" + this.img + "\" alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">" + this.vehicle + " " + this.name + "</h5>\n      <p class=\"card-text\"> " + this.price + "  " + this.kilometers + " \n      " + this.production + " " + this.seats + " " + this.fuel + "</p>\n      <a href=\"#\" class=\"btn btn-primary\">Calculate</a>\n    </div> <br>\n     ";
+    Motorbike.prototype.attributes = function () {
+        return " \n    <div class=\"card col-md-6\">\n      <img class=\"card-img-top h-50\" src=\"" + this.img + "\" alt=\"Card image cap\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">" + this.vehicle + ": " + this.name + "</h5>\n        <p class=\"card-text\"> Base price: " + this.price + " <br> Millage: " + this.kilometers + " <hr>\n            Production year: " + this.production + " <br> Number of seats: " + this.seats + " <br> Fuel type: " + this.fuel + "</p>\n        <a href=\"#\" class=\"btn btn-primary\">Calculate</a>\n      </div> <br>\n    </div>\n     ";
     };
-    return motorbike;
+    return Motorbike;
 }(Vehicles));
 var car = /** @class */ (function (_super) {
     __extends(car, _super);
@@ -58,11 +58,27 @@ var car = /** @class */ (function (_super) {
         return _this;
     }
     car.prototype.attributes = function () {
-        return "  <img class=\"card-img-top\" src=\"" + this.img + "\" alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">" + this.vehicle + " " + this.name + "</h5>\n      <p class=\"card-text\"> " + this.price + "  " + this.kilometers + " \n      " + this.production + " " + this.seats + " " + this.fuel + " " + this.color + "</p>\n      <a href=\"#\" class=\"btn btn-primary\">Calculate</a>\n    </div>\n    ";
+        return "  \n    <div class=\"card col-md-6\">\n      <img class=\"card-img-top h-50\" src=\"" + this.img + "\" alt=\"Card image cap\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">" + this.vehicle + ": " + this.name + "</h5>\n        <p class=\"card-text\"> Base price: " + this.price + " <br> Millage: " + this.kilometers + " <hr>\n            Production year: " + this.production + " <br> Number of seats: " + this.seats + " <br> Fuel type: " + this.fuel + "</p>\n        <a href=\"#\" class=\"btn btn-primary\">Calculate</a>\n      </div>\n    </div>\n    ";
     };
     return car;
 }(Vehicles));
-var display1 = new motorbike('African Twin', '14200$', '100km', '2020', '2', 'petrol', 'motorbike', '2000', 'img/african-twin.jpg');
+//price calculation
+priceCalc();
+{
+    if (this.vehicle == "Motorbike") {
+        var displayPrice1 = this.price * 2;
+        console.log(displayPrice1);
+    }
+    else {
+        var displayPrice2 = this.price;
+        console.log(displayPrice2);
+    }
+    console.log(displayPrice2);
+}
+;
+var display1 = new Motorbike('African Twin', '14200$', '100km', '2020', '2', 'petrol', 'Motorbike', 
+//2000 is the extra price, which is used to calculate the final price
+'2000', 'img/african-twin.jpg');
 var display2 = new car('Tesla Cybertruck', '40000$', '50km', '2025', '5', 'electrical', 'car', 'img/cyber-truck.jpg', 'silver');
 for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
     var i = arr_1[_i];

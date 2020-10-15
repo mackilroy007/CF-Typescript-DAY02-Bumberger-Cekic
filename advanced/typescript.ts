@@ -28,20 +28,23 @@ class Vehicles {
        ${this.production} ${this.seats} ${this.fuel} ${this.img}`;
   }
 }
-class motorbike extends Vehicles {
+class Motorbike extends Vehicles {
   extraprice;
   constructor(a, b, c, d, e, f, g, h, img) {
     super(a, b, c, d, e, f, g, img);
     this.extraprice = h;
   }
   attributes() {
-    return ` <img class="card-img-top" src="${this.img}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">${this.vehicle} ${this.name}</h5>
-      <p class="card-text"> ${this.price}  ${this.kilometers} 
-      ${this.production} ${this.seats} ${this.fuel}</p>
-      <a href="#" class="btn btn-primary">Calculate</a>
-    </div> <br>
+    return ` 
+    <div class="card col-md-6">
+      <img class="card-img-top h-50" src="${this.img}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">${this.vehicle}: ${this.name}</h5>
+        <p class="card-text"> Base price: ${this.price} <br> Millage: ${this.kilometers} <hr>
+            Production year: ${this.production} <br> Number of seats: ${this.seats} <br> Fuel type: ${this.fuel}</p>
+        <a href="#" class="btn btn-primary">Calculate</a>
+      </div> <br>
+    </div>
      `;
   }
 }
@@ -53,25 +56,41 @@ class car extends Vehicles {
     this.color = h;
   }
   attributes() {
-    return `  <img class="card-img-top" src="${this.img}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">${this.vehicle} ${this.name}</h5>
-      <p class="card-text"> ${this.price}  ${this.kilometers} 
-      ${this.production} ${this.seats} ${this.fuel} ${this.color}</p>
-      <a href="#" class="btn btn-primary">Calculate</a>
+    return `  
+    <div class="card col-md-6">
+      <img class="card-img-top h-50" src="${this.img}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">${this.vehicle}: ${this.name}</h5>
+        <p class="card-text"> Base price: ${this.price} <br> Millage: ${this.kilometers} <hr>
+            Production year: ${this.production} <br> Number of seats: ${this.seats} <br> Fuel type: ${this.fuel}</p>
+        <a href="#" class="btn btn-primary">Calculate</a>
+      </div>
     </div>
     `;
   }
 }
 
-let display1 = new motorbike(
+//price calculation
+priceCalc(){
+  if (this.vehicle == "Motorbike"){
+    let displayPrice1 = this.price * 2;
+    console.log(displayPrice1);
+  } else {
+    let displayPrice2 = this.price;
+    console.log(displayPrice2);
+  }
+  console.log(displayPrice2);
+};
+
+let display1 = new Motorbike(
   'African Twin',
   '14200$',
   '100km',
   '2020',
   '2',
   'petrol',
-  'motorbike',
+  'Motorbike',
+  //2000 is the extra price, which is used to calculate the final price
   '2000',
   'img/african-twin.jpg'
 );
