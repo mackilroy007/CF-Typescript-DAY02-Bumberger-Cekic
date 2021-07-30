@@ -36,6 +36,11 @@ var Vehicles = /** @class */ (function () {
         return " " + this.vehicle + " " + this.initialPrice + "  " + this.kilometers + " \n       " + this.production + " " + this.seats + " " + this.fuel + " " + this.img;
     };
     Vehicles.prototype.priceCalculation = function () {
+        // Create our number formatter.
+        var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        });
         if (this.vehicle == 'car') {
             var pricing = 20;
         }
@@ -43,7 +48,7 @@ var Vehicles = /** @class */ (function () {
             var pricing = 10;
         }
         this.finalPrice = this.initialPrice * pricing;
-        return this.finalPrice;
+        return formatter.format(this.finalPrice);
     };
     Vehicles.prototype.renderMore = function () {
         return " <br> <div>here is the final price " + this.priceCalculation() + "</div>";
@@ -62,6 +67,11 @@ var Motorbike = /** @class */ (function (_super) {
         return " \n    <div class=\"card m-1  col-lg-5\">\n      <img class=\"card-img-top mt-1\" src=\"" + this.img + "\" alt=\"Card image cap\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\"><span class=\" text-danger\">" + this.vehicle + ":</span> " + this.name + "</h5>\n        <p class=\"card-text\"> Base price: " + this.initialPrice + " <br> Millage: " + this.kilometers + " <hr>\n            Production year: " + this.production + " <br> Number of seats: " + this.seats + " <br> Fuel type: " + this.fuel + "</p>\n        <a  class=\"btn btn-dark pricebutton text-white\">Calculate</a><p class=\"lastPrice\"> <br> <br></p>\n      </div> <br>\n    </div>\n     ";
     };
     Motorbike.prototype.priceCalculation = function () {
+        // Create our number formatter.
+        var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        });
         if (this.vehicle == 'car') {
             var pricing = 20;
         }
@@ -69,7 +79,7 @@ var Motorbike = /** @class */ (function (_super) {
             var pricing = this.extraCosts / 200;
         }
         this.finalPrice = this.initialPrice * pricing;
-        return this.finalPrice;
+        return formatter.format(this.finalPrice);
     };
     return Motorbike;
 }(Vehicles));
@@ -81,7 +91,7 @@ var Car = /** @class */ (function (_super) {
         return _this;
     }
     Car.prototype.attributes = function () {
-        return "  \n    <div class=\"card m-1 col-lg-5\">\n      <img class=\"card-img-top mt-1\" src=\"" + this.img + "\" alt=\"Card image cap\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\"><span class=\" text-success\">" + this.vehicle + ":</span> " + this.name + "</h5>\n        <p class=\"card-text\"> Base price: " + this.initialPrice + " <br> Millage: " + this.kilometers + " <hr>\n            Production year: " + this.production + " <br> Number of seats: " + this.seats + " <br> Fuel type: " + this.fuel + "</p>\n        <a  class=\"btn btn-dark pricebutton text-white\">Calculate</a> <p class=\"lastPrice\"> <br> <br> </p>\n      </div>\n    </div>\n    ";
+        return "  \n    <div class=\"card m-1 col-lg-5\">\n      <img class=\"card-img-top mt-1\" src=\"" + this.img + "\" alt=\"Card image cap\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\"><span class=\" text-success\">" + this.vehicle + ":</span> " + this.name + "</h5>\n        <p class=\"card-text\"> Base price: " + this.initialPrice + " <br> Millage: " + this.kilometers + " <hr>\n            Production year: " + this.production + " <br> Number of seats: " + this.seats + " <br> Vehicle color: " + this.color + " <br> Fuel type: " + this.fuel + "</p>\n        <a  class=\"btn btn-dark pricebutton text-white\">Calculate</a> <p class=\"lastPrice\"> <br> <br> </p>\n      </div>\n    </div>\n    ";
     };
     return Car;
 }(Vehicles));

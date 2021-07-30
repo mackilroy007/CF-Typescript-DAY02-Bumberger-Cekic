@@ -28,15 +28,27 @@ class Vehicles {
     return ` ${this.vehicle} ${this.initialPrice}  ${this.kilometers} 
        ${this.production} ${this.seats} ${this.fuel} ${this.img}`;
   }
+  
 
   priceCalculation() {
+
+    // Create our number formatter.
+    var formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+
+      // These options are needed to round to whole numbers if that's what you want.
+      //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+      //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+    });
+
     if (this.vehicle == 'car') {
       var pricing = 20;
     } else {
       var pricing = 10;
     }
     this.finalPrice = this.initialPrice * pricing;
-    return this.finalPrice;
+    return formatter.format(this.finalPrice);
   }
 
   renderMore() {
@@ -65,13 +77,22 @@ class Motorbike extends Vehicles {
      `;
   }
   priceCalculation() {
+    // Create our number formatter.
+    var formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+
+      // These options are needed to round to whole numbers if that's what you want.
+      //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+      //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+    });
     if (this.vehicle == 'car') {
       var pricing = 20;
     } else {
       var pricing =  this.extraCosts /200;
     }
     this.finalPrice = this.initialPrice * pricing;
-    return this.finalPrice;
+    return formatter.format(this.finalPrice);
   }
 }
 class Car extends Vehicles {
@@ -88,7 +109,7 @@ class Car extends Vehicles {
       <div class="card-body">
         <h5 class="card-title"><span class=" text-success">${this.vehicle}:</span> ${this.name}</h5>
         <p class="card-text"> Base price: ${this.initialPrice} <br> Millage: ${this.kilometers} <hr>
-            Production year: ${this.production} <br> Number of seats: ${this.seats} <br> Fuel type: ${this.fuel}</p>
+            Production year: ${this.production} <br> Number of seats: ${this.seats} <br> Vehicle color: ${this.color} <br> Fuel type: ${this.fuel}</p>
         <a  class="btn btn-dark pricebutton text-white">Calculate</a> <p class="lastPrice"> <br> <br> </p>
       </div>
     </div>
